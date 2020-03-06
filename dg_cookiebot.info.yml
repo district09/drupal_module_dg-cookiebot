@@ -1,0 +1,15 @@
+name: Cookiebot
+type: module
+description: 'Provides extra functionality on top of the Cookiebot module.'
+package: Digipolis
+configure: dg_cookiebot.config
+
+core: 8.x
+core_version_requirement: ^8 || ^9
+php: 7.2
+
+dependencies:
+  - cookiebot:cookiebot
+
+'interface translation project': dg_cookiebot
+'interface translation server pattern': modules/contrib/%project/translations/%language.po
