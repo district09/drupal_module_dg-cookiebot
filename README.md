@@ -66,6 +66,22 @@ It's possible to overwite the Cookiebot Domain Group ID (CBID) in the
 $config['cookiebot.settings']['cookiebot_cbid'] = 'COOKIEBOT DOMAIN GROUP ID';
 ```
 
+## Link to edit the Cookie consent
+
+Once the user has set his cookie consent he has by default no link to
+review/edit his consent.
+
+Add a menu item (e.g. to the footer menu) to update the cookie consent. The path
+of the menu item should be `/cookiebot-renew`. It will be automatically
+rewritten to trigger the cookie consent popup.
+
+It's always possible to add a custom link to trigger opening the cookie consent
+popup:
+
+```html
+<a href="javascript:Cookiebot.renew()">Update cookie consent</a>
+```
+
 ## Create cookie declaration page
 
 This module adds a filter to replace a token within formatted text content by
@@ -121,37 +137,8 @@ without cookies:
 Open the `admin/config/media/video-embed-field` page and change the "Privacy
 mode" to "Enabled".
 
-### Overwite the video-embed-iframe template
-
-The `video-embed-iframe.html.twig` template needs to be overwritten to let
-Cookiebot know, by the `data-cookieconsent="necessary"` property, that these can
-be safely loaded.
-
-```html
-{#
-/**
- * @file
- * Display an iframe with alterable components.
- */
-#}
-<iframe{{ attributes }}{% if url is not empty %} src="{{ url }}{% if query is not empty %}?{{ query | url_encode }}{% endif %}{% if fragment is not empty %}#{{ fragment }}{% endif %}"{% endif %} data-cookieconsent="necessary"></iframe>
-```
-
-## Link to edit the Cookie consent
-
-Once the user has set his cookie consent he has by default no link to
-review/edit his consent.
-
-Add a menu item (e.g. to the footer menu) to update the cookie consent. The path
-of the menu item should be `/cookiebot-renew`. It will be automatically
-rewritten to trigger the cookie consent popup.
-
-It's always possible to add a custom link to trigger opening the cookie consent
-popup:
-
-```html
-<a href="javascript:Cookiebot.renew()">Update cookie consent</a>
-```
+This module will set the proper consent category to the video embed iframes so
+they will no longer be blocked.
 
 [Cookiebot]: https://www.cookiebot.com/
 [Cookiebot module]: https://www.drupal.org/project/cookiebot
