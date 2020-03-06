@@ -20,7 +20,7 @@ before_install:
   - ./cc-test-reporter before-build
 
 install:
-  - composer install
+  - COMPOSER_MEMORY_LIMIT=-1 composer install
 
 script:
   - vendor/bin/grumphp run
