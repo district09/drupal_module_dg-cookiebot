@@ -2,7 +2,7 @@
 
 All Notable changes to **Digipolis DG Cookiebot** module.
 
-## [Unreleased]
+## [8.x-1.0-alpha1]
 
 ### Added
 
