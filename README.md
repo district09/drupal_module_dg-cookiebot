@@ -22,19 +22,22 @@ Add the git source to the composer repositories: edit `composer.json` in the
 project root and add following lines in the `repositories` section:
 
 ```json
-        {
-            "type": "composer",
-            "url": "https://packagist.gentgrp.gent.be"
-        }
+{
+    "type": "composer",
+    "url": "https://packagist.gentgrp.gent.be"
+}
 ```
 
-Add the following Cookiebot module patch to have Cookiebot respect the language
-of the current page:
+Add the following Cookiebot module patches to:
+
+- Have Cookiebot respect the language of the current page.
+- Fix Cookiebot auto blocking breaking Drupal core Domready functionality.
 
 ```json
-    "drupal/cookiebot": {
-      "#3071334 Allow to set the language and multilingual support": "https://www.drupal.org/files/issues/2019-10-29/cookiebot-allow_to_set_the_language-3071334-8.patch"
-    },
+"drupal/cookiebot": {
+    "#3071334 Allow to set the language and multilingual support": "https://www.drupal.org/files/issues/2019-10-29/cookiebot-allow_to_set_the_language-3071334-8.patch",
+    "#3091260 Blockmode `Auto` will not work with core's domready library": "https://www.drupal.org/files/issues/2020-01-29/cookiebot-attach_behaviors-3091260-30.patch"
+},
 ```
 
 Install the module using composer:
@@ -71,9 +74,18 @@ $config['cookiebot.settings']['cookiebot_cbid'] = 'COOKIEBOT DOMAIN GROUP ID';
 Once the user has set his cookie consent he has by default no link to
 review/edit his consent.
 
+### Menu item
+
 Add a menu item (e.g. to the footer menu) to update the cookie consent. The path
 of the menu item should be `/cookiebot-renew`. It will be automatically
 rewritten to trigger the cookie consent popup.
+
+### Use block
+
+There is a "Cookie settings link" block available to add the Cookie consent link
+to a region on the website.
+
+### Custom link
 
 It's always possible to add a custom link to trigger opening the cookie consent
 popup:
