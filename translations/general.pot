@@ -1,0 +1,51 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  modules/contrib/dg_cookiebot/dg_cookiebot.info.yml: n/a
+#  modules/contrib/dg_cookiebot/src/Plugin/Block/CookiebotSettingsLink.php: n/a
+#  modules/contrib/dg_cookiebot/src/Plugin/Filter/CookiebotDeclarationFilter.php: n/a
+#  modules/contrib/dg_cookiebot/templates/dg-cookiebot-settings-link.html.twig: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2020-07-03 13:53+0200\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: modules/contrib/dg_cookiebot/dg_cookiebot.info.yml:0
+msgid "Cookiebot"
+msgstr ""
+
+#: modules/contrib/dg_cookiebot/dg_cookiebot.info.yml:0
+msgid "Provides extra functionality on top of the Cookiebot module."
+msgstr ""
+
+#: modules/contrib/dg_cookiebot/dg_cookiebot.info.yml:0
+msgid "Digipolis"
+msgstr ""
+
+#: modules/contrib/dg_cookiebot/src/Plugin/Block/CookiebotSettingsLink.php:7
+msgid "Cookie settings link"
+msgstr ""
+
+#: modules/contrib/dg_cookiebot/src/Plugin/Filter/CookiebotDeclarationFilter.php:15
+msgid "Replace Cookiebot declaration placeholder"
+msgstr ""
+
+#: modules/contrib/dg_cookiebot/src/Plugin/Filter/CookiebotDeclarationFilter.php:15
+msgid "Replaces the <code>[COOKIEBOT_DECLARATION]</code> placeholder by the actual list of cookies used within the website."
+msgstr ""
+
+#: modules/contrib/dg_cookiebot/templates/dg-cookiebot-settings-link.html.twig:13
+msgid "Cookie settings"
+msgstr ""
+

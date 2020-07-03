@@ -8,6 +8,17 @@
 declare(strict_types=1);
 
 /**
+ * Implements hook_theme().
+ */
+function dg_cookiebot_theme() {
+  return [
+    'dg_cookiebot_settings_link' => [
+      'variables' => [],
+    ],
+  ];
+}
+
+/**
  * Implements hook_preprocess_video_embed_iframe().
  *
  * Adds the proper <code>data-cookieconsent</code> attribute to the
@@ -22,4 +33,25 @@ function dg_cookiebot_preprocess_video_embed_iframe(&$variables): void {
   /** @var \Drupal\Core\Template\Attribute $attributes */
   $attributes = &$variables['attributes'];
   $attributes->setAttribute('data-cookieconsent', 'necessary');
+}
+
+/**
+ * Implements hook_library_info_alter().
+ *
+ * Replaces the cookiebot.js file by our own.
+ */
+function dg_cookiebot_library_info_alter(&$libraries, $extension) {
+  return;
+
+  if ($extension !== 'cookiebot') {
+    return;
+  }
+
+  if (!isset($libraries['cookiebot']['js']['js/cookiebot.js'])) {
+    return;
+  }
+
+  $newPath = '/' . drupal_get_path('module', 'dg_cookiebot') . '/js/dg-cookiebot.js';
+  $libraries['cookiebot']['js'][$newPath] = $libraries['cookiebot']['js']['js/cookiebot.js'];
+  unset($libraries['cookiebot']['js']['js/cookiebot.js']);
 }

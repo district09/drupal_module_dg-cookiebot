@@ -80,6 +80,11 @@ Add a menu item (e.g. to the footer menu) to update the cookie consent. The path
 of the menu item should be `/cookiebot-renew`. It will be automatically
 rewritten to trigger the cookie consent popup.
 
+### Use block
+
+There is a "Cookie settings link" block available to add the Cookie consent link
+to a region on the website.
+
 ### Custom link
 
 It's always possible to add a custom link to trigger opening the cookie consent

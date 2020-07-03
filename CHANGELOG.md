@@ -2,6 +2,12 @@
 
 All Notable changes to **Digipolis DG Cookiebot** module.
 
+## [Unreleased]
+
+### Added
+
+* CCM-54: Added simple block to add the cookie settings link to a region
+
 ## [8.x-1.0-alpha1]
 
 ### Added
