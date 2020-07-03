@@ -1,0 +1,46 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2020-07-03 13:53+0200\n"
+"PO-Revision-Date: 2020-07-03 14:05+0200\n"
+"Last-Translator: Peter Decuyper <peter.decuyper@digipolis.gent>\n"
+"Language-Team: \n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3.1\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: modules/contrib/dg_cookiebot/dg_cookiebot.info.yml:0
+msgid "Cookiebot"
+msgstr "Cookiebot"
+
+#: modules/contrib/dg_cookiebot/dg_cookiebot.info.yml:0
+msgid "Provides extra functionality on top of the Cookiebot module."
+msgstr "Voorziet extra functionaliteit bovenop de Cookiebot module."
+
+#: modules/contrib/dg_cookiebot/dg_cookiebot.info.yml:0
+msgid "Digipolis"
+msgstr "Digipolis"
+
+#: modules/contrib/dg_cookiebot/src/Plugin/Block/CookiebotSettingsLink.php:7
+msgid "Cookie settings link"
+msgstr "Cookie instellingen link"
+
+#: modules/contrib/dg_cookiebot/src/Plugin/Filter/CookiebotDeclarationFilter.php:15
+msgid "Replace Cookiebot declaration placeholder"
+msgstr "Vervang Cookiebot verklaring placeholder"
+
+#: modules/contrib/dg_cookiebot/src/Plugin/Filter/CookiebotDeclarationFilter.php:15
+msgid ""
+"Replaces the <code>[COOKIEBOT_DECLARATION]</code> placeholder by the actual "
+"list of cookies used within the website."
+msgstr ""
+"Vervangt de <code>[COOKIBOT_DECLARATION]</code> placeholder door een "
+"overzicht van in de site gebruikte cookies."
+
+#: modules/contrib/dg_cookiebot/templates/dg-cookiebot-settings-link.html.twig:13
+msgid "Cookie settings"
+msgstr "Cookie instellingen"
