@@ -35,7 +35,6 @@ before_install:
 
   # Require Drupal core.
   - composer require -n --no-update --sort-packages --dev drupal/core:~$DRUPAL.0 phpunit/phpunit:^$PHPUNIT
-  - composer run-script drupal-phpunit-upgrade
 
   # Get and run the Code Climate test reporter.
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
@@ -44,6 +43,7 @@ before_install:
 
 install:
   - composer install -n
+  - composer run-script drupal-phpunit-upgrade
 
 script:
   - vendor/bin/grumphp run -n
