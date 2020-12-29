@@ -11,9 +11,12 @@ cache:
     - $HOME/.composer/cache
 
 env:
-  - DRUPAL=8.9 PHPUNIT=7.5
-  - DRUPAL=9.0 PHPUNIT=8.5
-  - DRUPAL=9.1 PHPUNIT=8.5
+  global:
+    - COMPOSER_MEMORY_LIMIT=-1
+  matrix:
+    - DRUPAL=8.9 PHPUNIT=7.5
+    - DRUPAL=9.0 PHPUNIT=8.5
+    - DRUPAL=9.1 PHPUNIT=8.5
 
 jobs:
   fast_finish: true
@@ -32,7 +35,6 @@ before_install:
   - ./cc-test-reporter before-build
 
 install:
-  - export COMPOSER_MEMORY_LIMIT=-1
   - composer install -n
 
 script:
