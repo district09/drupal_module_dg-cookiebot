@@ -22,6 +22,13 @@ jobs:
   fast_finish: true
 
 before_install:
+  # Configure Xdebug 3.x.
+  - echo 'xdebug.mode=coverage' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
+
+  # Update composer.
+  - composer self-update --2
+  - composer --version
+
   # Configure the authentication mechanisms.
   - composer config -ga github-oauth.github.com $GITHUB_TOKEN
   - composer config -ga http-basic.digipolis.repo.repman.io token $REPMAN_TOKEN
