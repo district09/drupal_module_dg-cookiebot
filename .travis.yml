@@ -24,7 +24,6 @@ jobs:
 before_install:
   # Configure php.
   - echo 'xdebug.mode=coverage' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
-  - echo 'xdebug.max_nesting_level=1000' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
 
   # Update composer.
   - composer self-update --2
@@ -35,7 +34,8 @@ before_install:
   - composer config -ga http-basic.digipolis.repo.repman.io token $REPMAN_TOKEN
 
   # Require Drupal core.
-  - composer require -n --no-update --sort-packages --dev drupal/core:~$DRUPAL.0 phpunit/phpunit:^$PHPUNIT
+  - composer require -n --no-update --sort-packages --dev drupal/core:~$DRUPAL.0
+  - composer run-script drupal-phpunit-upgrade
 
   # Get and run the Code Climate test reporter.
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
