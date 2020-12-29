@@ -80,3 +80,4 @@ exclude_patterns:
   - "**/.idea/**/*"
   - "**/tests/**/*"
   - "**/*.settings.php"
+  - "RoboFile.php"
