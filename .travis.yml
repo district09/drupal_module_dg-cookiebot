@@ -56,4 +56,5 @@ after_script:
     -Dsonar.projectKey=$SONAR_PROJECT_KEY
     -Dsonar.projectName="$SONAR_PROJECT_NAME"
     -Dsonar.tests=tests
+    -Dsonar.exclusions=**/tests/**/*
     -Dsonar.php.coverage.reportPaths=build/logs/clover.xml
