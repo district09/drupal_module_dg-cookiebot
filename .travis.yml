@@ -11,16 +11,20 @@ cache:
     - $HOME/.composer/cache
 
 env:
-  - DRUPAL=8.9 PHPUNIT=7.5
-  - DRUPAL=9.0 PHPUNIT=8.5
-  - DRUPAL=9.1 PHPUNIT=8.5
+  global:
+    - COMPOSER_MEMORY_LIMIT=-1
+  matrix:
+    - DRUPAL=8.9 PHPUNIT=7.5
+    - DRUPAL=9.0 PHPUNIT=8.5
+    - DRUPAL=9.1 PHPUNIT=8.5
 
 jobs:
   fast_finish: true
 
 before_install:
-  # Configure Xdebug 3.x.
+  # Configure php.
   - echo 'xdebug.mode=coverage' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
+  - echo 'xdebug.max_nesting_level=1000' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
 
   # Update composer.
   - composer self-update --2
@@ -39,7 +43,6 @@ before_install:
   - ./cc-test-reporter before-build
 
 install:
-  - export COMPOSER_MEMORY_LIMIT=-1
   - composer install -n
 
 script:
