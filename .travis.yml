@@ -17,14 +17,12 @@ env:
     - DRUPAL=8.9 PHPUNIT=7.5
     - DRUPAL=9.0 PHPUNIT=8.5
     - DRUPAL=9.1 PHPUNIT=8.5
+    - DRUPAL=9.2 PHPUNIT=8.5
 
 jobs:
   fast_finish: true
 
 before_install:
-  # Configure php.
-  - echo 'xdebug.mode=coverage' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
-
   # Update composer.
   - composer self-update --2
   - composer --version
