@@ -34,24 +34,3 @@ function dg_cookiebot_preprocess_video_embed_iframe(&$variables): void {
   $attributes = &$variables['attributes'];
   $attributes->setAttribute('data-cookieconsent', 'necessary');
 }
-
-/**
- * Implements hook_library_info_alter().
- *
- * Replaces the cookiebot.js file by our own.
- */
-function dg_cookiebot_library_info_alter(&$libraries, $extension) {
-  return;
-
-  if ($extension !== 'cookiebot') {
-    return;
-  }
-
-  if (!isset($libraries['cookiebot']['js']['js/cookiebot.js'])) {
-    return;
-  }
-
-  $newPath = '/' . drupal_get_path('module', 'dg_cookiebot') . '/js/dg-cookiebot.js';
-  $libraries['cookiebot']['js'][$newPath] = $libraries['cookiebot']['js']['js/cookiebot.js'];
-  unset($libraries['cookiebot']['js']['js/cookiebot.js']);
-}

@@ -27,7 +27,7 @@ class CookiebotSettingsLinkTest extends UnitTestCase {
     );
 
     $expected = ['#theme' => 'dg_cookiebot_settings_link'];
-    $this->assertArrayEquals(
+    $this->assertEquals(
       $expected,
       $block->build()
     );
