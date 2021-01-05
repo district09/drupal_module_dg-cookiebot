@@ -111,7 +111,7 @@ class CookiebotDeclarationFilter extends FilterBase implements ContainerFactoryP
       return $result;
     }
 
-    $placeholder = preg_quote(self::PLACEHOLDER);
+    $placeholder = preg_quote(self::PLACEHOLDER, '#');
     $newText = preg_replace(
       '#<p>' . $placeholder . '</p>|' . $placeholder . '#',
       $this->createMarkup(),
