@@ -11,8 +11,6 @@ cache:
     - $HOME/.composer/cache
 
 env:
-  global:
-    - COMPOSER_MEMORY_LIMIT=-1
   matrix:
     - DRUPAL=8.9 PHPUNIT=7.5
     - DRUPAL=9.0 PHPUNIT=8.5
@@ -23,32 +21,33 @@ jobs:
   fast_finish: true
 
 before_install:
-  # Update composer.
+  # Update composer to latest v2.
   - composer self-update --2
   - composer --version
 
-  # Configure the authentication mechanisms.
-  - composer config -ga github-oauth.github.com $GITHUB_TOKEN
-  - composer config -ga http-basic.digipolis.repo.repman.io token $REPMAN_TOKEN
+  # Configure the repository authentication mechanisms.
+  - if [ "${GITHUB_TOKEN}" != "" ]; then composer config github-oauth.github.com ${GITHUB_TOKEN}; fi
+  - if [ "${REPMAN_TOKEN}" != "" ]; then composer config --global --auth http-basic.digipolis.repo.repman.io token ${REPMAN_TOKEN}; fi
 
-  # Require Drupal core.
-  - composer require -n --no-update --sort-packages --dev drupal/core:~$DRUPAL.0 phpunit/phpunit:^$PHPUNIT
-
-  # Get and run the Code Climate test reporter.
+  # Get the CodeClimate test reporter.
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
 
 install:
-  - composer install -n
+  # Set the proper Drupal core & PHPUnit version.
+  - composer require -n --no-update --sort-packages --dev --with-all-dependencies "drupal/core:$DRUPAL.*" "phpunit/phpunit:$PHPUNIT.*"
+  # Install the module dependencies.
+  - composer install -n --no-progress
 
 script:
   - vendor/bin/grumphp run -n
 
 after_script:
-  # Run the Code Climate test reporter.
+  # Send the coverage report to the CodeClimate test reporter.
   - ./cc-test-reporter after-build --coverage-input-type clover --exit-code $TRAVIS_TEST_RESULT
 
+after_success:
   # Get and run the SonarQube scanner.
   - SONAR_PROJECT_NAME="Drupal $(composer config name | cut -d / -f 2)"
   - SONAR_PROJECT_KEY=web:$(echo "$TRAVIS_REPO_SLUG" | cut -d / -f 2)
