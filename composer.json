@@ -44,11 +44,13 @@
     "prefer-stable": true,
     "scripts": {
         "post-install-cmd": "vendor/bin/grumphp git:init",
-        "coverage": "vendor/bin/phpunit --configuration=phpunit-coverage.xml",
-        "grumphp": "vendor/bin/grumphp run --ansi",
-        "phpcs": "vendor/bin/phpcs",
-        "phpstan": "vendor/bin/phpstan analyse --level=7 ./src",
-        "test": "vendor/bin/phpunit"
+        "coverage": "vendor/bin/phpunit --configuration=phpunit.qa-drupal.xml --coverage-html build/coverage",
+        "grumphp": "vendor/bin/grumphp run -n",
+        "phpcpd": "vendor/bin/grumphp run --tasks=phpcpd",
+        "phpcs": "vendor/bin/grumphp run --tasks=phpcs",
+        "phpmd": "vendor/bin/grumphp run --tasks=phpmd",
+        "phpstan": "vendor/bin/grumphp run --tasks=phpstan",
+        "phpunit": "vendor/bin/phpunit --configuration=phpunit.qa-drupal.xml"
     },
     "support": {
         "source": "https://github.com/digipolisgent/drupal_module_dg-cookiebot"
