@@ -1,4 +1,15 @@
-/build/
-/vendor/
-/.phpunit.result.cache
+# Ignore the module lock file.
 /composer.lock
+
+# Ignore vendor directories.
+/vendor
+/node_modules
+
+# Ignore build artifacts.
+/build
+/.phpunit.result.cache
+/*.local.*
+/*.qa-drupal.*
+
+# Ignore binary translation files.
+*.mo
