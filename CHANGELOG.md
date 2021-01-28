@@ -2,13 +2,25 @@
 
 All Notable changes to **Digipolis DG Cookiebot** module.
 
-## [8.x-1.0-alpha2]
+## [1.0.1]
+
+### Fixed
+
+* Fix Drupal 9.x support in composer.json.
+
+## [1.0.0]
+
+### Added
+
+* Add support for Drupal 9.
+
+## [1.0.0-alpha2]
 
 ### Added
 
 * CCM-54: Added simple block to add the cookie settings link to a region
 
-## [8.x-1.0-alpha1]
+## [1.0.0-alpha1]
 
 ### Added
 
@@ -16,6 +28,7 @@ All Notable changes to **Digipolis DG Cookiebot** module.
 * CCM-30: Added the proper data-cookieconsent level to video_embed_field when
   the privacy option is enabled.
 
-[8.x-1.0-alpha2]: https://github.com/digipolisgent/drupal_module_dg-cookiebot/compare/8.x-1.0-alpha1...8.x-1.0-alpha2
-[8.x-1.0-alpha1]: https://github.com/digipolisgent/drupal_module_dg-cookiebot/releases/tag/8.x-1.0-alpha1
-[Unreleased]: https://github.com/digipolisgent/drupal_module_dg-cookiebot/compare/8.x-1.x...8.x-1.x-dev
+[1.0.1]: https://github.com/digipolisgent/drupal_module_dg-cookiebot/compare/1.0.0...1.0.1
+[1.0.0]: https://github.com/digipolisgent/drupal_module_dg-cookiebot/compare/1.0.0-alpha2...1.0.0
+[1.0.0-alpha2]: https://github.com/digipolisgent/drupal_module_dg-cookiebot/compare/1.0.0-alpha1...1.0.0-alpha2
+[1.0.0-alpha1]: https://github.com/digipolisgent/drupal_module_dg-cookiebot/releases/tag/1.0.0-alpha1
