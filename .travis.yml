@@ -61,5 +61,5 @@ after_success:
     -Dsonar.projectName="$SONAR_PROJECT_NAME"
     -Dsonar.sources=.
     -Dsonar.tests=tests
-    -Dsonar.exclusions=vendor,**/tests/**/*
+    -Dsonar.exclusions=**/vendor/**/*,**/tests/**/*
     -Dsonar.php.coverage.reportPaths=build/logs/clover.xml
