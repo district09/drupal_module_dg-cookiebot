@@ -23,7 +23,7 @@ project root and add following lines in the `repositories` section:
 ```json
 {
     "type": "composer",
-    "url": "https://packagist.gentgrp.gent.be"
+    "url": "https://digipolis.repo.repman.io"
 }
 ```
 
