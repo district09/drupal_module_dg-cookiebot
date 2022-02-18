@@ -4,8 +4,7 @@ Adds extra functionality to the [Cookiebot module].
 
 [![Github][github-badge]][github-link]
 
-[![Build Status Master][travis-master-badge]][travis-master-link]
-[![Build Status Develop][travis-develop-badge]][travis-develop-link]
+[![Build Status Master][travis-badge]][travis-link]
 [![Maintainability][codeclimate-maint-badge]][codeclimate-maint-link]
 [![Test Coverage][codeclimate-cover-badge]][codeclimate-cover-link]
 
@@ -162,10 +161,8 @@ they will no longer be blocked.
 [github-badge]: https://img.shields.io/badge/github-DigipolisGent_Cookiebot-blue.svg?logo=github
 [github-link]: https://github.com/digipolisgent/drupal_module_dg-cookiebot
 
-[travis-master-badge]: https://travis-ci.com/digipolisgent/drupal_module_dg-cookiebot.svg?token=anXPs46DEwgxP8RmJPAJ&branch=8.x-1.x "Travis build master"
-[travis-master-link]: https://travis-ci.com/digipolisgent/drupal_module_dg-cookiebot/branches
-[travis-develop-badge]: https://travis-ci.com/digipolisgent/drupal_module_dg-cookiebot.svg?token=anXPs46DEwgxP8RmJPAJ&branch=8.x-1.x-dev "Travis build develop"
-[travis-develop-link]: https://travis-ci.com/digipolisgent/drupal_module_dg-cookiebot/branches
+[travis-badge]: https://travis-ci.com/digipolisgent/drupal_module_dg-cookiebot.svg?token=anXPs46DEwgxP8RmJPAJ&branch=1.x "Travis build master"
+[travis-link]: https://travis-ci.com/digipolisgent/drupal_module_dg-cookiebot/branches
 
 [codeclimate-maint-badge]: https://api.codeclimate.com/v1/badges/5f2e8b272e71e2143b93/maintainability
 [codeclimate-maint-link]: https://codeclimate.com/repos/5e6242ba0a957401b6012c05/maintainability
