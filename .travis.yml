@@ -3,8 +3,8 @@ language: php
 sudo: false
 
 php:
-  - 7.3
   - 7.4
+  - 8.1
 
 cache:
   directories:
@@ -12,10 +12,8 @@ cache:
 
 env:
   matrix:
-    - DRUPAL=8.9 PHPUNIT=7.5
-    - DRUPAL=9.0 PHPUNIT=8.5
-    - DRUPAL=9.1 PHPUNIT=8.5
     - DRUPAL=9.2 PHPUNIT=8.5
+    - DRUPAL=9.3 PHPUNIT=8.5
 
 jobs:
   fast_finish: true
