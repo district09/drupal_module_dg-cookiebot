@@ -1,7 +1,8 @@
 {
     "name": "gent-drupal/dg_cookiebot",
-    "type": "drupal-module",
     "description": "Provides extra functionality on top of the Cookiebot module.",
+    "license": "GPL-2.0+",
+    "type": "drupal-module",
     "keywords": [
         "Cookiebot",
         "Digipolis",
@@ -9,14 +10,16 @@
         "Gent",
         "GDPR"
     ],
-    "homepage": "https://github.com/digipolisgent/drupal_module_dg-cookiebot",
-    "license": "GPL-2.0+",
     "authors": [
         {
             "name": "Peter Decuyper",
             "email": "peter.decuyper@digipolis.gent"
         }
     ],
+    "homepage": "https://github.com/digipolisgent/drupal_module_dg-cookiebot",
+    "support": {
+        "source": "https://github.com/digipolisgent/drupal_module_dg-cookiebot"
+    },
     "require": {
         "php": "^7.3 || ^8.1",
         "drupal/cookiebot": "^1.0@alpha",
@@ -24,14 +27,6 @@
     },
     "require-dev": {
         "digipolisgent/qa-drupal": "^1.4"
-    },
-    "config": {
-        "sort-packages": true
-    },
-    "extra": {
-        "grumphp": {
-            "config-default-path": "vendor/digipolisgent/qa-drupal/configs/grumphp-extension.yml"
-        }
     },
     "repositories": {
         "drupal": {
@@ -41,6 +36,14 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "grumphp": {
+            "config-default-path": "vendor/digipolisgent/qa-drupal/configs/grumphp-extension.yml"
+        }
+    },
     "scripts": {
         "post-install-cmd": "vendor/bin/grumphp git:init",
         "coverage": "vendor/bin/phpunit --configuration=phpunit.qa-drupal.xml --coverage-html build/coverage",
@@ -50,8 +53,5 @@
         "phpmd": "vendor/bin/grumphp run --tasks=phpmd",
         "phpstan": "vendor/bin/grumphp run --tasks=phpstan",
         "phpunit": "vendor/bin/phpunit --configuration=phpunit.qa-drupal.xml"
-    },
-    "support": {
-        "source": "https://github.com/digipolisgent/drupal_module_dg-cookiebot"
     }
 }
