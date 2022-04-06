@@ -19,7 +19,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *   id = "filter_cookiebot_declaration",
  *   title = @Translation("Replace Cookiebot declaration placeholder"),
  *   description = @Translation("Replaces the <code>[COOKIEBOT_DECLARATION]</code> placeholder by the actual list of cookies used within the website."),
- *   type = Drupal\filter\Plugin\FilterInterface::TYPE_MARKUP_LANGUAGE
+ *   type = Drupal\filter\Plugin\FilterInterface::TYPE_TRANSFORM_IRREVERSIBLE
  * )
  */
 class CookiebotDeclarationFilter extends FilterBase implements ContainerFactoryPluginInterface {
