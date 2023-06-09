@@ -12,6 +12,7 @@ use Drupal\Core\Render\RendererInterface;
 use Drupal\dg_cookiebot\Plugin\Filter\CookiebotDeclarationFilter;
 use Drupal\Tests\UnitTestCase;
 use Prophecy\Argument;
+use Prophecy\PhpUnit\ProphecyTrait;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -20,6 +21,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * @group dg_cookiebot
  */
 class CookiebotDeclarationFilterTest extends UnitTestCase {
+
+  use ProphecyTrait;
 
   /**
    * Proper dependencies are injected.

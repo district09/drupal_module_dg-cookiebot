@@ -132,7 +132,7 @@ drupal_phpunit_populate_class_loader();
 
 // Ensure we have the correct PHPUnit version for the version of PHP.
 if (class_exists('\PHPUnit_Runner_Version')) {
-  $phpunit_version = \PHPUnit_Runner_Version::id();
+  $phpunit_version = \PHPUnit\Runner\Version::id();
 }
 else {
   $phpunit_version = Version::id();
