@@ -767,13 +767,10 @@
           preferencesCheckboxes[i + 1].checked = checked;
         }
       }
-      /**
-       * Create the Cookie Consent accordion instances.
-       */
-      window.addEventListener("CookiebotOnLoad", function () {
-        new _Accordion[
-          "default"
-        ](document.getElementById("SG-CookieConsent--preferences"), {
+
+      new _Accordion["default"](
+        document.getElementById("SG-CookieConsent--preferences"),
+        {
           expand: function expand(button, content) {
             // Move the accept button.
             preferencesSaveButton.insertAdjacentElement(
@@ -788,46 +785,47 @@
             }
             content.style.maxHeight = "".concat(content.scrollHeight, "px");
           },
-        });
+        }
+      );
 
-        /**
-         * Enable all checkboxes and save the preferences on Accept all.
-         */
-        acceptButton.addEventListener("click", function (e) {
-          e.preventDefault();
-          SG_Cookieconsent__togglePreferences(true);
-          Cookiebot.dialog.submitConsent();
-        });
-
-        /**
-         * Disable all checkboxes and save the preferences on Decline all.
-         */
-        declineButton.addEventListener("click", function (e) {
-          e.preventDefault();
-          SG_Cookieconsent__togglePreferences(false);
-          Cookiebot.dialog.submitConsent();
-        });
-
-        /**
-         * Enable/Disable the accept all button on preferences closed/open.
-         */
-        preferencesToggleButton.addEventListener("click", function () {
-          preferencesToggleButton.disabled === true
-            ? (preferencesToggleButton.disabled = false)
-            : (preferencesToggleButton.disabled = true);
-          declineButton.disabled === true
-            ? (declineButton.disabled = false)
-            : (declineButton.disabled = true);
-        });
-
-        /**
-         * Save the custom preferences.
-         */
-        preferencesSaveButton.addEventListener("click", function (e) {
-          e.preventDefault();
-          Cookiebot.dialog.submitConsent();
-        });
+      /**
+       * Enable all checkboxes and save the preferences on Accept all.
+       */
+      acceptButton.addEventListener("click", function (e) {
+        e.preventDefault();
+        SG_Cookieconsent__togglePreferences(true);
+        Cookiebot.dialog.submitConsent();
       });
+
+      /**
+       * Disable all checkboxes and save the preferences on Decline all.
+       */
+      declineButton.addEventListener("click", function (e) {
+        e.preventDefault();
+        SG_Cookieconsent__togglePreferences(false);
+        Cookiebot.dialog.submitConsent();
+      });
+
+      /**
+       * Enable/Disable the accept all button on preferences closed/open.
+       */
+      preferencesToggleButton.addEventListener("click", function () {
+        preferencesToggleButton.disabled === true
+          ? (preferencesToggleButton.disabled = false)
+          : (preferencesToggleButton.disabled = true);
+        declineButton.disabled === true
+          ? (declineButton.disabled = false)
+          : (declineButton.disabled = true);
+      });
+
+      /**
+       * Save the custom preferences.
+       */
+      preferencesSaveButton.addEventListener("click", function (e) {
+        e.preventDefault();
+        Cookiebot.dialog.submitConsent();
+      });
+
       /**
        * Close the Consent modal when All are accepted or Preferences are saved.
        */
