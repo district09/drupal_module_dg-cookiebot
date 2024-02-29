@@ -34,3 +34,11 @@ function dg_cookiebot_preprocess_video_embed_iframe(&$variables): void {
   $attributes = &$variables['attributes'];
   $attributes->setAttribute('data-cookieconsent', 'necessary');
 }
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function dg_cookiebot_page_attachments_alter(array &$attachments) {
+  // Attach the custom_script library to every page.
+  $attachments['#attached']['library'][] = 'dg_cookiebot/dg_cookiebot';
+}

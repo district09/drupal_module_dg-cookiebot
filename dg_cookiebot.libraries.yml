@@ -1,0 +1,7 @@
+dg_cookiebot:
+  version: 1.x
+  js:
+    js/cookiebotPopUp.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal

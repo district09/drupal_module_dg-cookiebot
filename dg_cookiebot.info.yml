@@ -9,6 +9,9 @@ php: 8.1
 
 dependencies:
   - cookiebot:cookiebot
+  
+libraries:
+  - dg_cookiebot/dg_cookiebot
 
 'interface translation project': dg_cookiebot
 'interface translation server pattern': modules/contrib/%project/translations/%language.po
