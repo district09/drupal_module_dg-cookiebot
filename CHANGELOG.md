@@ -9,6 +9,10 @@ All Notable changes to **Digipolis DG Cookiebot** module.
 * CCM-61: Add interface to set the cookie category manually for Drupal
   javascript libraries.
 
+### Changed
+
+* CCM-61: Change minimal Drupal version to 10.1.
+
 ## [1.3.0]
 
 ### Added
