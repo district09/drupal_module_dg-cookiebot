@@ -1,0 +1,6 @@
+dg_cookiebot.admin_libraries_form:
+  title: 'Libraries'
+  description: 'Manually set cookie category for Drupal libraries.'
+  route_name: dg_cookiebot.admin_libraries_form
+  parent: cookiebot.admin_settings_form
+  weight: 50

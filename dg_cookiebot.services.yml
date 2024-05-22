@@ -1,0 +1,9 @@
+services:
+  dg_cookiebot.libraries_categories_manager:
+    class: Drupal\dg_cookiebot\LibrariesCategoriesConfigManager
+    arguments:
+      - '@config.factory'
+  dg_cookiebot.libraries_info_alter:
+    class: Drupal\dg_cookiebot\LibrariesInfoAlter
+    arguments:
+      - '@dg_cookiebot.libraries_categories_manager'

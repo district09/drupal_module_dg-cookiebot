@@ -2,6 +2,13 @@
 
 All Notable changes to **Digipolis DG Cookiebot** module.
 
+## [Unreleased]
+
+### Added
+
+* CCM-61: Add interface to set the cookie category manually for Drupal
+  javascript libraries.
+
 ## [1.3.0]
 
 ### Added

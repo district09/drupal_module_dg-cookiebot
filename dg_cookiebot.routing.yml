@@ -1,0 +1,9 @@
+dg_cookiebot.admin_libraries_form:
+  path: '/admin/config/cookiebot/libraries'
+  defaults:
+    _form: '\Drupal\dg_cookiebot\Form\LibrariesSettingsForm'
+    _title: 'Drupal libraries'
+  requirements:
+    _permission: 'administer cookiebot settings'
+  options:
+    _admin_route: TRUE
