@@ -1,0 +1,10 @@
+cookiebot.admin_settings_form:
+  title: 'Settings'
+  route_name: cookiebot.admin_settings_form
+  base_route: cookiebot.admin_settings_form
+  weight: -100
+dg_cookiebot.admin_libraries_form:
+  title: 'Libraries'
+  route_name: dg_cookiebot.admin_libraries_form
+  base_route: cookiebot.admin_settings_form
+  weight: 100

@@ -23,7 +23,7 @@
     "require": {
         "php": "^8.1",
         "drupal/cookiebot": "^1.0@alpha",
-        "drupal/core": "^9.4 || ^10.0"
+        "drupal/core": "^10.1"
     },
     "require-dev": {
         "digipolisgent/qa-drupal": "^2.0"
@@ -38,9 +38,9 @@
     "prefer-stable": true,
     "config": {
         "allow-plugins": {
-            "phpro/grumphp-shim": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
             "ergebnis/composer-normalize": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true
+            "phpro/grumphp-shim": true
         },
         "sort-packages": true
     },

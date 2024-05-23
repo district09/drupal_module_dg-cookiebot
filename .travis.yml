@@ -1,4 +1,4 @@
-dist: jammy
+dist: bionic
 language: php
 sudo: false
 
@@ -11,18 +11,16 @@ cache:
 
 env:
   matrix:
-    - DRUPAL=9.4 PHPUNIT=9
-    - DRUPAL=10.0 PHPUNIT=9
+    - DRUPAL=10.1
+    - DRUPAL=10.2
 
 jobs:
   fast_finish: true
 
 before_install:
-  # Update composer to latest v2.
+  # Update & configure composer.
   - composer self-update --2
   - composer --version
-
-  # Configure the repository authentication mechanisms.
   - if [ "${GITHUB_TOKEN}" != "" ]; then composer config github-oauth.github.com ${GITHUB_TOKEN}; fi
   - if [ "${REPMAN_TOKEN}" != "" ]; then composer config --global --auth http-basic.digipolis.repo.repman.io token ${REPMAN_TOKEN}; fi
 
@@ -31,32 +29,18 @@ before_install:
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
 
+  # Require Proper Drupal core version.
+  - composer require -n --no-update --sort-packages --dev drupal/core:~$DRUPAL.0
+
 install:
-  # Set the proper Drupal core & PHPUnit version.
-  - composer require -n --no-update --sort-packages --dev --with-all-dependencies "drupal/core:$DRUPAL.*" "phpunit/phpunit:$PHPUNIT.*"
-  # Install the module dependencies.
-  - composer install -n --no-progress
+  - composer install -n
 
 script:
-  - vendor/bin/grumphp run -n
+  # Checks to be added to the list below: phpstan
+  # Until Flexmail is not used with patches, phpstan can't be run because will
+  # not take into account the patch changes.
+  - vendor/bin/grumphp run -n --tasks=composer,composer_normalize,git_blacklist,git_branch_name,phpcpd,phpcs,phpmd,phpunit,twigcs,yamllint,securitychecker_enlightn
 
 after_script:
-  # Send the coverage report to the CodeClimate test reporter.
+  # Run the Code Climate test reporter.
   - ./cc-test-reporter after-build --coverage-input-type clover --exit-code $TRAVIS_TEST_RESULT
-
-after_success:
-  # Get and run the SonarQube scanner.
-  - SONAR_PROJECT_NAME="Drupal $(composer config name | cut -d / -f 2)"
-  - SONAR_PROJECT_KEY=web:$(echo "$TRAVIS_REPO_SLUG" | cut -d / -f 2)
-  - curl -L https://repo1.maven.org/maven2/org/sonarsource/scanner/cli/sonar-scanner-cli/4.3.0.2102/sonar-scanner-cli-4.3.0.2102.jar > sonar-scanner.jar
-  - "[ -d tests ] || mkdir tests"
-  - >
-    java -jar sonar-scanner.jar
-    -Dsonar.host.url=https://sonarqube.stad.gent
-    -Dsonar.login=$SONAR_LOGIN
-    -Dsonar.projectKey=$SONAR_PROJECT_KEY
-    -Dsonar.projectName="$SONAR_PROJECT_NAME"
-    -Dsonar.sources=.
-    -Dsonar.tests=tests
-    -Dsonar.exclusions=**/build/**/*,**/vendor/**/*,**/tests/**/*
-    -Dsonar.php.coverage.reportPaths=build/logs/clover.xml

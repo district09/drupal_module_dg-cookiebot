@@ -2,9 +2,9 @@ name: Cookiebot
 type: module
 description: 'Provides extra functionality on top of the Cookiebot module.'
 package: Digipolis
-configure: dg_cookiebot.config
+configure: cookiebot.admin_settings_form
 
-core_version_requirement: ^9.4 || ^10
+core_version_requirement: ^10
 php: 8.1
 
 dependencies:

@@ -85,7 +85,7 @@ class CookiebotDeclarationFilterTest extends UnitTestCase {
     string $currentLanguageId,
     string $text,
     string $expectedText,
-    bool $shouldHaveCacheTags
+    bool $shouldHaveCacheTags,
   ): void {
     $filter = new CookiebotDeclarationFilter(
       [],
@@ -209,7 +209,7 @@ class CookiebotDeclarationFilterTest extends UnitTestCase {
   private function createRendererMock(
     ?string $cookiebotClientId,
     string $currentLanguageId,
-    bool $shouldBeRendered
+    bool $shouldBeRendered,
   ): RendererInterface {
     $renderer = $this->prophesize(RendererInterface::class);
 

@@ -34,3 +34,15 @@ function dg_cookiebot_preprocess_video_embed_iframe(&$variables): void {
   $attributes = &$variables['attributes'];
   $attributes->setAttribute('data-cookieconsent', 'necessary');
 }
+
+/**
+ * Implements hook_library_info_alter().
+ *
+ * Passes the libraries to the LibrariesInfoAlter so the cookie category can be
+ * changed based on the cookiebot javascript libraries configuration.
+ */
+function dg_cookiebot_library_info_alter(&$libraries, $extension): void {
+  /** @var \Drupal\dg_cookiebot\LibrariesInfoAlter $alterer */
+  $alterer = \Drupal::service('dg_cookiebot.libraries_info_alter');
+  $alterer->alter($libraries, $extension);
+}

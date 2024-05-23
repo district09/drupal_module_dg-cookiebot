@@ -74,7 +74,7 @@ class CookiebotDeclarationFilter extends FilterBase implements ContainerFactoryP
     $plugin_definition,
     ConfigFactoryInterface $configFactory,
     RendererInterface $renderer,
-    LanguageManagerInterface $languageManager
+    LanguageManagerInterface $languageManager,
   ) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
 
@@ -90,7 +90,7 @@ class CookiebotDeclarationFilter extends FilterBase implements ContainerFactoryP
     ContainerInterface $container,
     array $configuration,
     $plugin_id,
-    $plugin_definition
+    $plugin_definition,
   ) {
     return new static(
       $configuration,

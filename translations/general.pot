@@ -4,6 +4,11 @@
 # Copyright YEAR NAME <EMAIL@ADDRESS>
 # Generated from files:
 #  modules/contrib/dg_cookiebot/dg_cookiebot.info.yml: n/a
+#  modules/contrib/dg_cookiebot/dg_cookiebot.links.menu.yml: n/a
+#  modules/contrib/dg_cookiebot/dg_cookiebot.links.task.yml: n/a
+#  modules/contrib/dg_cookiebot/dg_cookiebot.routing.yml: n/a
+#  modules/contrib/dg_cookiebot/src/CookieCategory.php: n/a
+#  modules/contrib/dg_cookiebot/src/Form/LibrariesSettingsForm.php: n/a
 #  modules/contrib/dg_cookiebot/src/Plugin/Block/CookiebotSettingsLink.php: n/a
 #  modules/contrib/dg_cookiebot/src/Plugin/Filter/CookiebotDeclarationFilter.php: n/a
 #  modules/contrib/dg_cookiebot/templates/dg-cookiebot-settings-link.html.twig: n/a
@@ -12,7 +17,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2020-07-03 13:53+0200\n"
+"POT-Creation-Date: 2024-05-22 14:06+0200\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -31,6 +36,74 @@ msgstr ""
 
 #: modules/contrib/dg_cookiebot/dg_cookiebot.info.yml:0
 msgid "Digipolis"
+msgstr ""
+
+#: modules/contrib/dg_cookiebot/dg_cookiebot.links.menu.yml:0 modules/contrib/dg_cookiebot/dg_cookiebot.links.task.yml:0
+msgid "Libraries"
+msgstr ""
+
+#: modules/contrib/dg_cookiebot/dg_cookiebot.links.menu.yml:0
+msgid "Manually set cookie category for Drupal libraries."
+msgstr ""
+
+#: modules/contrib/dg_cookiebot/dg_cookiebot.links.task.yml:0
+msgid "Settings"
+msgstr ""
+
+#: modules/contrib/dg_cookiebot/dg_cookiebot.routing.yml:0
+msgid "Drupal libraries"
+msgstr ""
+
+#: modules/contrib/dg_cookiebot/src/CookieCategory.php:34
+msgid "Necessary"
+msgstr ""
+
+#: modules/contrib/dg_cookiebot/src/CookieCategory.php:35
+msgid "Preferences"
+msgstr ""
+
+#: modules/contrib/dg_cookiebot/src/CookieCategory.php:36
+msgid "Statistics"
+msgstr ""
+
+#: modules/contrib/dg_cookiebot/src/CookieCategory.php:37
+msgid "Marketing"
+msgstr ""
+
+#: modules/contrib/dg_cookiebot/src/CookieCategory.php:38
+msgid "Ignore"
+msgstr ""
+
+#: modules/contrib/dg_cookiebot/src/CookieCategory.php:50
+msgid "Libraries that are needed to guarantee website functionality."
+msgstr ""
+
+#: modules/contrib/dg_cookiebot/src/CookieCategory.php:51
+msgid "Libraries about setting user choices to navigate the website."
+msgstr ""
+
+#: modules/contrib/dg_cookiebot/src/CookieCategory.php:52
+msgid "Libraries used for analytical purposes."
+msgstr ""
+
+#: modules/contrib/dg_cookiebot/src/CookieCategory.php:53
+msgid "Libraries used for targeting the user with (personalized) adds."
+msgstr ""
+
+#: modules/contrib/dg_cookiebot/src/CookieCategory.php:54
+msgid "Libraries that are ignored by Cookiebot."
+msgstr ""
+
+#: modules/contrib/dg_cookiebot/src/Form/LibrariesSettingsForm.php:149
+msgid "Cookies can be classified as different categories. Cookiebot will try to classify the scripts automatically. These settings allow overriding the auto classification for Drupal (javascript) libraies."
+msgstr ""
+
+#: modules/contrib/dg_cookiebot/src/Form/LibrariesSettingsForm.php:153
+msgid "Add the module name and specific library (e.g. \"core/once\") to add set for a specific library or add only the module name to set for all libraries of that module (e.g. \"core/*\")."
+msgstr ""
+
+#: modules/contrib/dg_cookiebot/src/Form/LibrariesSettingsForm.php:156
+msgid "Add one item per line."
 msgstr ""
 
 #: modules/contrib/dg_cookiebot/src/Plugin/Block/CookiebotSettingsLink.php:7
