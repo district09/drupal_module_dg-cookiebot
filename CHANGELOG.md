@@ -2,6 +2,16 @@
 
 All Notable changes to **Digipolis DG Cookiebot** module.
 
+## [2.0.0]
+
+### Added
+
+* Add Drupal 11 support
+
+### Remove
+
+* Remove Drupal 10 support
+
 ## [1.4.0]
 
 ### Added
@@ -51,6 +61,7 @@ All Notable changes to **Digipolis DG Cookiebot** module.
 * CCM-30: Added the proper data-cookieconsent level to video_embed_field when
   the privacy option is enabled.
 
+[2.0.0]: https://github.com/district09/drupal_module_dg-cookiebot/compare/1.4.0...2.0.0
 [1.4.0]: https://github.com/district09/drupal_module_dg-cookiebot/compare/1.3.0...1.4.0
 [1.3.0]: https://github.com/district09/drupal_module_dg-cookiebot/compare/1.2.0...1.3.0
 [1.2.0]: https://github.com/district09/drupal_module_dg-cookiebot/compare/1.1.0...1.2.0
